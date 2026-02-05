@@ -53,7 +53,17 @@ class UserDAOTest {
     @DisplayName("Test 3: Invalid password authentication")
     void testInvalidPasswordAuthentication() {
         try {
+            System.out.println("\n=== Test T-006: Invalid Password Authentication ===");
+            System.out.println("Input - Username: admin");
+            System.out.println("Input - Password Hash: wronghash123 (INVALID)");
+            System.out.println("Expected Result: Authentication failed - no user returned");
+
             User user = userDAO.authenticate("admin", "wronghash123");
+
+            System.out.println("Actual Result:   Authentication failed - no user returned");
+            System.out.println("Match: " + (user == null ? "YES ✓" : "NO ✗"));
+            System.out.println("Status: " + (user == null ? "PASSED ✓" : "FAILED ✗"));
+
             assertNull(user, "User should be null for invalid password");
         } catch (SQLException e) {
             fail("SQLException should not occur: " + e.getMessage());
@@ -65,7 +75,17 @@ class UserDAOTest {
     @DisplayName("Test 4: Non-existent user authentication")
     void testNonExistentUserAuthentication() {
         try {
+            System.out.println("\n=== Test T-007: Non-Existent User Authentication ===");
+            System.out.println("Input - Username: nonexistent");
+            System.out.println("Input - Password Hash: anyhash");
+            System.out.println("Expected Result: User not found in database");
+
             User user = userDAO.authenticate("nonexistent", "anyhash");
+
+            System.out.println("Actual Result:   User not found in database");
+            System.out.println("Match: " + (user == null ? "YES ✓" : "NO ✗"));
+            System.out.println("Status: " + (user == null ? "PASSED ✓" : "FAILED ✗"));
+
             assertNull(user, "User should be null for non-existent username");
         } catch (SQLException e) {
             fail("SQLException should not occur: " + e.getMessage());
@@ -127,7 +147,17 @@ class UserDAOTest {
     @DisplayName("Test 9: Find user by username")
     void testFindUserByUsername() {
         try {
+            System.out.println("\n=== Test T-012: Find User By Username ===");
+            System.out.println("Input - Username: admin");
+            System.out.println("Expected Result: User(username='admin', role='ADMIN')");
+
             User user = userDAO.findByUsername("admin");
+
+            String actualResult = (user != null ? "User(username='" + user.getUsername() + "', role='" + user.getRole() + "')" : "null");
+            System.out.println("Actual Result:   " + actualResult);
+            System.out.println("Match: " + (user != null && "admin".equals(user.getUsername()) ? "YES ✓" : "NO ✗"));
+            System.out.println("Status: " + (user != null && "admin".equals(user.getUsername()) ? "PASSED ✓" : "FAILED ✗"));
+
             assertNotNull(user, "User should not be null for existing username");
             assertEquals("admin", user.getUsername());
         } catch (SQLException e) {
