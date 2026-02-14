@@ -49,6 +49,10 @@
                     </p>
                     <p class="text-xs text-gray-600">Role: ${user.role}</p>
                 </div>
+                <a href="${pageContext.request.contextPath}/"
+                   class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg transition duration-200 text-sm">
+                    <i class="fas fa-home mr-2"></i>Home
+                </a>
                 <a href="${pageContext.request.contextPath}/logout"
                    class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition duration-200 text-sm">
                     <i class="fas fa-sign-out-alt mr-2"></i>Logout
