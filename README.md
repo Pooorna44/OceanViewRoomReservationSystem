@@ -399,10 +399,10 @@ This project is developed for academic purposes as part of the CIS6003 Advanced 
 
 ## 👤 Author
 
-**Your Name**  
-Student ID: [Your ID]  
+**Guruge Poorna Udara Dhananjaya Perera**  
+Student ID: CL/BSCSD/33/76  
 Course: CIS6003 Advanced Programming  
-Date: January 2026
+Date: March 2026
 
 ---
 
@@ -410,7 +410,7 @@ Date: January 2026
 
 For academic inquiries or technical support:
 
-- Email: your.email@example.com
+- Email: pooorna84@gmail.com
 - GitHub Issues: [Create an issue](https://github.com/yourusername/OceanViewRoomReservationSystem/issues)
 
 ---
@@ -428,4 +428,4 @@ For academic inquiries or technical support:
 
 ---
 
-*Last Updated: January 12, 2026*
+*Last Updated: March 1, 2026*
